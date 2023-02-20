@@ -10,6 +10,13 @@ func Log(mess string) {
 	fmt.Println("[LOG] " + mess)
 }
 
+type UserProfilePost struct {
+	Visibility string `cql:"visibility"`
+	PostId     int64  `cql:"post_id"`
+	PostType   string `cql:"post_type"`
+	TagStatus  string `cql:"tag_status"`
+	UserId     int
+}
 type FollowUpdate struct {
 	Type     string `json:"type" cql:"type,,primarykey"`
 	ActorId  int    `json:"actor_id" cql:"actor_id,,primarykey"`
